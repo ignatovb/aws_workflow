@@ -6,7 +6,7 @@ on:
       - master 
   workflow_dispatch:  # Allows manual triggering
 env:
-  WORKING_DIR: ../../modules/s3-bucket  
+  WORKING_DIR: ./modules/s3-bucket  
 jobs:
   terragrunt-plan:
     name: Deploy S3 with Terragrunt (Init and Plan)
@@ -61,11 +61,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1  
 
-      - name: Set up Terragrunt
-        uses: gruntwork-io/terragrunt-action@v2
-        with:
-          tg_version: latest
-          tf_version: latest 
+      # - name: Set up Terragrunt
+      #   uses: gruntwork-io/terragrunt-action@v2
+      #   with:
+      #     tg_version: latest
+      #     tf_version: latest 
 
       - name: Run Terragrunt Apply (After Approval)
         uses: gruntwork-io/terragrunt-action@v2
