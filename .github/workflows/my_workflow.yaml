@@ -47,7 +47,7 @@ jobs:
     needs: terragrunt-plan  
     environment: production  # This will trigger the approval before apply
     env:
-      WORKING_DIR: ../../modules  
+      WORKING_DIR: ../../modules/s3-bucket  
 
     steps:
       - name: Checkout repository
