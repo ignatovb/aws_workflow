@@ -1,9 +1,9 @@
 name: Deploy S3 with Terragrunt
 
 on:
-  push:
-    branches:
-      - master 
+  #push:
+    #branches:
+      #- master 
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
