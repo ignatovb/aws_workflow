@@ -3,7 +3,7 @@ name: Deploy S3 with Terragrunt
 on:
   push:
     branches:
-      - main 
+      - master 
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -71,65 +71,3 @@ jobs:
           tg_command: apply
           tg_dir: ${{ env.WORKING_DIR }}
 
-
-
-
-
-
-
-# name: Deploy S3 with Terragrunt
-
-# on:
-#   push:
-#     branches:
-#       - main  # Adjust branch as needed
-#   workflow_dispatch:  # Allows manual triggering
-
-# jobs:
-#   terragrunt:
-#     name: Deploy S3 with Terragrunt
-#     runs-on: ubuntu-latest
-#     environment: production  # Enforces manual approval before deployment
-#     env:
-#       WORKING_DIR: ../../modules
-
-
-#     steps:
-#       - name: Checkout repository
-#         uses: actions/checkout@v4
-
-#       - name: Configure AWS Credentials
-#         uses: aws-actions/configure-aws-credentials@v4
-#         with:
-#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#           aws-region: eu-central-1  
-
-#       - name: Set up Terragrunt
-#         uses: gruntwork-io/terragrunt-action@v2
-#         with:
-#           tg_version: latest  # Optional, specify version if needed
-
-#       - name: Run Terragrunt Init
-#         uses: gruntwork-io/terragrunt-action@v2
-#         with:
-#           tg_command: init
-#           tg_dir: ${{ env.WORKING_DIR }}  # Change to your Terragrunt module path
-
-#       - name: Run Terragrunt Plan
-#         uses: gruntwork-io/terragrunt-action@v2
-#         with:
-#           tg_command: plan
-#           tg_dir: ${{ env.WORKING_DIR }}
-
-#       - name: Run Terragrunt Apply (After Approval)
-#         uses: gruntwork-io/terragrunt-action@v2
-#         with:
-#           tg_command: apply
-#           tg_dir: ${{ env.WORKING_DIR }}
-
-
-
-
-
-##############
