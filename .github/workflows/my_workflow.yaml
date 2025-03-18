@@ -1,15 +1,9 @@
 name: Deploy S3 with Terragrunt
 
 on:
-<<<<<<< HEAD
-  #push:
-    #branches:
-      #- master 
-=======
   push:
     branches:
-      - main 
->>>>>>> parent of 41a954e (changing main to master)
+      - master 
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
